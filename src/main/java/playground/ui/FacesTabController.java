@@ -13,7 +13,7 @@ import playground.util.Utils;
 
 import java.io.File;
 
-public class MainController {
+public class FacesTabController {
 
     private final FileChooser fileChooser;
     private final ImageRecognizerService imageRecognizerService;
@@ -22,7 +22,7 @@ public class MainController {
     @FXML
     private ImageView imageDisplay;
 
-    public MainController() {
+    public FacesTabController() {
         imageRecognizerService = new ImageRecognizerService();
         imageMarkerService = new ImageMarkerService();
 
