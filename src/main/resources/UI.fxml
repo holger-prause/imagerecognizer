@@ -1,28 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.Pane?>
-<BorderPane prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="playground.ui.FacesTabController">
+<BorderPane prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="playground.ui.ObjectsTabController">
    <top>
       <TabPane tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="CENTER">
         <tabs>
           <Tab text="Detect Faces">
             <content>
-                  <Pane>
-                     <children>
-                        <Label layoutX="14.0" layoutY="6.0" text="Select picture with faces" />
-                        <Button layoutX="14.0" layoutY="23.0" mnemonicParsing="false" onAction="#imageSelected" text="Load Image" />
-                        <ImageView fx:id="imageDisplay" fitHeight="600.0" fitWidth="600.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" />
-                     </children>
-                  </Pane>
+                <fx:include fx:id="facesTab" source="FacesTab.fxml" />
             </content>
           </Tab>
-          <Tab text="Detect Image">
+          <Tab text="Detect Objects">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" style="-fx-background-color: blue;" />
+                <fx:include fx:id="objectsTab" source="ObjectsTab.fxml" />
             </content>
           </Tab>
         </tabs>

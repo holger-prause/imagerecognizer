@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<AnchorPane fx:id="facesTab" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="playground.ui.FacesTabController">
+   <children>
+      <Label layoutX="24.0" layoutY="16.0" text="Select picture with objects" />
+      <Button layoutX="24.0" layoutY="33.0" mnemonicParsing="false" onAction="#imageSelected" text="Load Image" />
+      <ImageView fx:id="imageDisplay" fitHeight="600.0" fitWidth="600.0" layoutX="10.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>

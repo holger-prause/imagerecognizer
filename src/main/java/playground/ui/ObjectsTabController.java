@@ -8,12 +8,14 @@ import playground.util.Utils;
 
 import java.io.File;
 
-public class FacesTabController extends ImageController{
-
+/**
+ * Created by Holger on 02.04.2018.
+ */
+public class ObjectsTabController extends ImageController {
     private final ImageRecognizerService imageRecognizerService;
     private final ImageMarkerService imageMarkerService;
 
-    public FacesTabController() {
+    public ObjectsTabController() {
         imageRecognizerService = new ImageRecognizerService();
         imageMarkerService = new ImageMarkerService();
     }

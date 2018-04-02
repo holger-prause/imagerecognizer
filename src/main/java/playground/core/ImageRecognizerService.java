@@ -9,8 +9,7 @@ import org.bytedeco.javacpp.opencv_objdetect.CascadeClassifier;
 import java.io.File;
 
 import static org.bytedeco.javacpp.opencv_imgcodecs.imread;
-import static org.bytedeco.javacpp.opencv_imgproc.cvtColor;
-import static org.bytedeco.javacpp.opencv_imgproc.equalizeHist;
+import static org.bytedeco.javacpp.opencv_imgproc.*;
 
 public class ImageRecognizerService {
 
@@ -23,13 +22,14 @@ public class ImageRecognizerService {
 
     public ImageRecognitionResult detectAllFaces(File file) {
         return detect(file, faceClassifier);
-        //return detect(file, carClassifier);
     }
 
     private ImageRecognitionResult detect(File file, CascadeClassifier classifier) {
         Mat inputImage = imread(file.getAbsolutePath());
         Mat grayImage = new Mat();
 
+        // remove some noise
+        blur(inputImage, grayImage, new Size(7, 7));
         cvtColor(inputImage, grayImage, opencv_imgproc.COLOR_BGR2GRAY);
         equalizeHist(grayImage, grayImage);
 
@@ -38,7 +38,7 @@ public class ImageRecognizerService {
         //the 3rd parameter is scale factor - picking a lower value results in more potantial matches but is also more resource consuming
         //the 4th parameter is the amount of neighbours - generally speaking the higher this value, the more exact the match is, but can miss some matches
         //the 5th parameter is a flag for influencing the processing
-        classifier.detectMultiScale(grayImage, matches, 1.05, 5, 0, new Size(5,5), new Size());
+        classifier.detectMultiScale(grayImage, matches, 1.05, 4, 0, new Size(5,5), new Size());
         return new ImageRecognitionResult(inputImage, matches);
     }
 }
