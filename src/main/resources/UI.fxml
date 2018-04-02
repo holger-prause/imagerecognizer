@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="playground.ui.MainController">
+   <top>
+      <Pane BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="14.0" layoutY="6.0" text="Select picture with faces" />
+            <Button layoutX="14.0" layoutY="23.0" mnemonicParsing="false" onAction="#imageSelected" text="Load Image" />
+            <ImageView fx:id="imageDisplay" fitHeight="600.0" fitWidth="600.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </Pane>
+   </top>
+</BorderPane>
